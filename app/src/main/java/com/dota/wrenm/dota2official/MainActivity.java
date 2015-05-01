@@ -1,9 +1,12 @@
 package com.dota.wrenm.dota2official;
 
 import android.content.Context;
+import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.graphics.Color;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -49,6 +52,23 @@ public class MainActivity extends ActionBarActivity implements FragmentDrawer.Fr
 
         // display the first navigation drawer view on app launch
         displayView(0);
+    }
+
+    private boolean isAppInstalled(String packageName) {
+        PackageManager pm = getPackageManager();
+        boolean installed = false;
+        try {
+            pm.getPackageInfo(packageName, PackageManager.GET_ACTIVITIES);
+            installed = true;
+            Intent launchIntent = getPackageManager().getLaunchIntentForPackage("tv.twitch.android.viewer");
+            startActivity(launchIntent);
+        } catch (PackageManager.NameNotFoundException e) {
+            Intent i = new Intent(android.content.Intent.ACTION_VIEW);
+            i.setData(Uri.parse("https://play.google.com/store/apps/details?id=tv.twitch.android.viewer"));
+            startActivity(i);
+            installed = false;
+        }
+        return installed;
     }
 
     public boolean checkInternet() {
@@ -106,7 +126,7 @@ public class MainActivity extends ActionBarActivity implements FragmentDrawer.Fr
                 title = getString(R.string.title_messages);
                 break;
             case 3:
-                fragment = new StreamFragment();
+                isAppInstalled("tv.twitch.android.viewer");
                 title = getString(R.string.title_stream);
             default:
                 break;
