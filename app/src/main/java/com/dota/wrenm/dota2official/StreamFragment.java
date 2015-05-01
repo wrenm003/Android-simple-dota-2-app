@@ -35,7 +35,7 @@ public class StreamFragment extends Fragment {
         webView.setScrollBarStyle(WebView.SCROLLBARS_OUTSIDE_OVERLAY);
         webView.setScrollbarFadingEnabled(false);
 
-        String strUrl="http://www.twitch.tv/directory/game/Dota2" ;
+        String strUrl="http://www.twitch.tv/directory/game/Dota%202" ;
 
         webView.loadUrl(strUrl);
         webView.setWebViewClient(new WebViewClient());
