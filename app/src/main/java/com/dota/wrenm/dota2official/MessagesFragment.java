@@ -33,10 +33,11 @@ public class MessagesFragment extends Fragment {
         webView.getSettings().setJavaScriptEnabled(true);
         webView.getSettings().setLoadWithOverviewMode(true);
         webView.getSettings().setUseWideViewPort(true);
+        webView.getSettings().setBuiltInZoomControls(true);
         webView.setScrollBarStyle(WebView.SCROLLBARS_OUTSIDE_OVERLAY);
         webView.setScrollbarFadingEnabled(false);
 
-        String strUrl="http://blog.dota2.com/" ;
+        String strUrl="http://www.reddit.com/r/dota2" ;
 
         webView.loadUrl(strUrl);
         webView.setWebViewClient(new WebViewClient());
