@@ -5,6 +5,8 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
 
 
 public class FriendsFragment extends Fragment {
@@ -23,7 +25,23 @@ public class FriendsFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_friends, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_home, container, false);
+
+        WebView webView = (WebView)rootView.findViewById(R.id.webView);
+
+        webView.setInitialScale(1);
+        webView.getSettings().setJavaScriptEnabled(true);
+        webView.getSettings().setLoadWithOverviewMode(true);
+        webView.getSettings().setUseWideViewPort(true);
+        webView.getSettings().setBuiltInZoomControls(true);
+        webView.setScrollBarStyle(WebView.SCROLLBARS_OUTSIDE_OVERLAY);
+        webView.setScrollbarFadingEnabled(false);
+
+        String strUrl="http://www.gosugamers.net/dota2/rankings#team" ;
+
+        webView.loadUrl(strUrl);
+        webView.setWebViewClient(new WebViewClient());
+
+        return rootView;
     }
 }
