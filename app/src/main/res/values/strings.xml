@@ -8,15 +8,21 @@
     <string name="nav_item_home">Home</string>
     <string name="nav_item_friends">Teams</string>
     <string name="nav_item_notifications">Disscussion</string>
+    <string name="nav_item_streams">Twitch</string>
 
     <!-- navigation drawer item labels  -->
     <string-array name="nav_drawer_labels">
         <item>@string/nav_item_home</item>
         <item>@string/nav_item_friends</item>
         <item>@string/nav_item_notifications</item>
+        <item>@string/nav_item_streams</item>
     </string-array>
 
     <string name="title_messages">Disscussion</string>
-    <string name="title_friends">Twitch</string>
+    <string name="title_friends">Teams</string>
     <string name="title_home">Home</string>
+    <string name="title_stream">Twitch</string>
+
+<!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
