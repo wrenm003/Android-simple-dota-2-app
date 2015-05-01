@@ -1,6 +1,7 @@
 package com.dota.wrenm.dota2official;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
@@ -28,8 +29,12 @@ public class MainActivity extends ActionBarActivity implements FragmentDrawer.Fr
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if(!checkInternet()){
-            Toast.makeText(MainActivity.this, "Internet", Toast.LENGTH_LONG).show();
+        if(checkInternet() == true){
+            //Toast.makeText(MainActivity.this, "Internet", Toast.LENGTH_LONG).show();
+        }
+        else{
+            finish();
+            Toast.makeText(MainActivity.this, "You dont have Internet Connection! Please turn on your wifi/mobile data!", Toast.LENGTH_LONG).show();
         }
         setContentView(R.layout.activity_main);
         mToolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -42,14 +47,12 @@ public class MainActivity extends ActionBarActivity implements FragmentDrawer.Fr
         drawerFragment.setUp(R.id.fragment_navigation_drawer, (DrawerLayout) findViewById(R.id.drawer_layout), mToolbar);
         drawerFragment.setDrawerListener(this);
 
-
         // display the first navigation drawer view on app launch
         displayView(0);
     }
 
     public boolean checkInternet() {
-        ConnectivityManager cm =
-                (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+        ConnectivityManager cm = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo netInfo = cm.getActiveNetworkInfo();
         return netInfo != null && netInfo.isConnectedOrConnecting();
     }
@@ -74,7 +77,6 @@ public class MainActivity extends ActionBarActivity implements FragmentDrawer.Fr
         }
 
         if(id == R.id.action_search){
-            Toast.makeText(getApplicationContext(), "Search action is selected!", Toast.LENGTH_SHORT).show();
             return true;
         }
 
