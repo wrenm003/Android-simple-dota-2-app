@@ -23,10 +23,8 @@ public class MessagesFragment extends Fragment {
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_home, container, false);
-
         WebView webView = (WebView)rootView.findViewById(R.id.webView);
 
         webView.setInitialScale(1);
@@ -36,9 +34,7 @@ public class MessagesFragment extends Fragment {
         webView.getSettings().setBuiltInZoomControls(true);
         webView.setScrollBarStyle(WebView.SCROLLBARS_OUTSIDE_OVERLAY);
         webView.setScrollbarFadingEnabled(false);
-
         String strUrl="http://www.reddit.com/r/dota2" ;
-
         webView.loadUrl(strUrl);
         webView.setWebViewClient(new WebViewClient());
 

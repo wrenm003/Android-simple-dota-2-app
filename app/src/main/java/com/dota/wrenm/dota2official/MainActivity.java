@@ -52,6 +52,7 @@ public class MainActivity extends ActionBarActivity implements FragmentDrawer.Fr
     }
 
     public boolean checkInternet() {
+        //Check for internet Connection
         ConnectivityManager cm = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo netInfo = cm.getActiveNetworkInfo();
         return netInfo != null && netInfo.isConnectedOrConnecting();
