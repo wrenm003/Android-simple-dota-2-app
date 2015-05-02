@@ -7,10 +7,11 @@
 
     <string name="nav_item_home">Home</string>
     <string name="nav_item_friends">Teams</string>
-    <string name="nav_item_notifications">Disscussion</string>
+    <string name="nav_item_notifications">Discussion</string>
     <string name="nav_item_streams">Twitch</string>
     <string name="nav_item_teams_info">Teams Info</string>
     <string name="nav_item_tournaments">Tournaments</string>
+    <string name="nav_item_matches">Notable Upcoming Matches</string>
     <string name="nav_item_game_analysis">Game Analysis</string>
 
     <!-- navigation drawer item labels  -->
@@ -21,15 +22,17 @@
         <item>@string/nav_item_game_analysis</item>
         <item>@string/nav_item_teams_info</item>
         <item>@string/nav_item_tournaments</item>
+        <item>@string/nav_item_matches</item>
         <item>@string/nav_item_streams</item>
     </string-array>
 
-    <string name="title_messages">Disscussion</string>
+    <string name="title_messages">Discussion</string>
     <string name="title_friends">Teams</string>
     <string name="title_home">Home</string>
     <string name="title_stream">Twitch</string>
     <string name="title_teams_info">Teams Info</string>
     <string name="title_tournaments">Tournaments</string>
+    <string name="title_matches">Notable Upcoming Matches</string>
     <string name="title_game_analysis">Game Analysis</string>
 
 

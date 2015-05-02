@@ -134,6 +134,10 @@ public class MainActivity extends ActionBarActivity implements FragmentDrawer.Fr
                 title = getString(R.string.title_tournaments);
                 break;
             case 6:
+                fragment = new MatchesFragment();
+                title = getString(R.string.title_matches);
+                break;
+            case 7:
                 isAppInstalled("tv.twitch.android.viewer");
                 title = getString(R.string.title_stream);
             default:
