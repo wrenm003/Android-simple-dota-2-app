@@ -3,7 +3,6 @@ package com.dota.wrenm.dota2official;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
-import android.graphics.Color;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.net.Uri;
@@ -18,9 +17,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
-
-
-import com.dota.wrenm.dota2official.R;
 
 public class MainActivity extends ActionBarActivity implements FragmentDrawer.FragmentDrawerListener {
 
@@ -126,10 +122,23 @@ public class MainActivity extends ActionBarActivity implements FragmentDrawer.Fr
                 title = getString(R.string.title_messages);
                 break;
             case 3:
+                fragment = new GameAnalysis();
+                title = getString(R.string.title_game_analysis);
+                break;
+            case 4:
+                fragment = new TeamsInfoFragment();
+                title = getString(R.string.title_teams_info);
+                break;
+            case 5:
+                fragment = new TournamentsFragment();
+                title = getString(R.string.title_tournaments);
+                break;
+            case 6:
                 isAppInstalled("tv.twitch.android.viewer");
                 title = getString(R.string.title_stream);
             default:
                 break;
+
         }
 
         if (fragment != null) {
