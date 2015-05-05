@@ -54,15 +54,16 @@ public class MainActivity extends ActionBarActivity implements FragmentDrawer.Fr
         PackageManager pm = getPackageManager();
         boolean installed = false;
         try {
-            pm.getPackageInfo(packageName, PackageManager.GET_ACTIVITIES);
-            installed = true;
-            Intent launchIntent = getPackageManager().getLaunchIntentForPackage("tv.twitch.android.viewer");
-            startActivity(launchIntent);
-        } catch (PackageManager.NameNotFoundException e) {
-            Intent i = new Intent(android.content.Intent.ACTION_VIEW);
-            i.setData(Uri.parse("https://play.google.com/store/apps/details?id=tv.twitch.android.viewer"));
-            startActivity(i);
-            installed = false;
+                pm.getPackageInfo(packageName, PackageManager.GET_ACTIVITIES);
+                installed = true;
+                Intent launchIntent = getPackageManager().getLaunchIntentForPackage("tv.twitch.android.viewer");
+                launchIntent.setData(Uri.parse("twitch://open?game=Dota 2"));
+                startActivity(launchIntent);
+            } catch (PackageManager.NameNotFoundException e) {
+                Intent i = new Intent(android.content.Intent.ACTION_VIEW);
+                i.setData(Uri.parse("https://play.google.com/store/apps/details?id=tv.twitch.android.viewer"));
+                startActivity(i);
+                installed = false;
         }
         return installed;
     }
