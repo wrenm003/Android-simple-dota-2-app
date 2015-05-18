@@ -33,7 +33,7 @@ public class MainActivity extends ActionBarActivity implements FragmentDrawer.Fr
         }
         else{
             finish();
-            Toast.makeText(MainActivity.this, "You dont have Internet Connection! Please turn on your wifi/mobile data!", Toast.LENGTH_LONG).show();
+            Toast.makeText(MainActivity.this, "You don't have Internet Connection! Please turn on your wifi/mobile data!", Toast.LENGTH_LONG).show();
         }
         setContentView(R.layout.activity_main);
         mToolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -68,7 +68,7 @@ public class MainActivity extends ActionBarActivity implements FragmentDrawer.Fr
         return installed;
     }
 
-    public boolean checkInternet() {
+        public boolean checkInternet() {
         //Check for internet Connection
         ConnectivityManager cm = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo netInfo = cm.getActiveNetworkInfo();
